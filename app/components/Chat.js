@@ -24,7 +24,7 @@ function Chat() {
   }, [appState.isChatOpen]);
 
   useEffect(() => {
-    socket.current = io("http://localhost:8080" || "https://rauf-chat-app.herokuapp.com");
+    socket.current = io(process.env.BACKENDURL || "https://rauf-chat-app.herokuapp.com");
     socket.current.on("chatFromServer", message => {
       setState(draft => {
         draft.chatMessage.push(message);
