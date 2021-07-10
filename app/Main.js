@@ -4,7 +4,7 @@ import { useImmerReducer } from "use-immer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
 import { CSSTransition } from "react-transition-group";
-Axios.defaults.baseURL = "http://localhost:8080";
+Axios.defaults.baseURL = "http://localhost:8080" || "https://rauf-chat-app.herokuapp.com";
 
 // My Components
 import Header from "./components/Header";
