@@ -4,8 +4,11 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "dev": "webpack serve",
+    "dev": "npm-run-all -s generate webpackDev",
+    "build": "npm-run-all -s generate webpackBuild",
+    "webpackDev": "webpack serve",
     "webpackBuild": "webpack",
+    "generate": "babel-node --presets=@babel/preset-react,@babel/preset-env generateHtml.js",
     "previewDist": "node previewDist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,8 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.12.10",
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
@@ -26,6 +29,7 @@
     "html-webpack-harddisk-plugin": "^2.0.0",
     "html-webpack-plugin": "^5.3.2",
     "immer": "^8.0.4",
+    "node": "^16.4.0",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

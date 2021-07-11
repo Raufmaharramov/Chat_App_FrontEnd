@@ -42,7 +42,7 @@ function EditPost(props) {
         draft.title.value = action.value;
         return;
       case "bodyChanged":
-        draft.body.hasError = fasle;
+        draft.body.hasError = false;
         draft.body.value = action.value;
         return;
       case "requestStarted":
